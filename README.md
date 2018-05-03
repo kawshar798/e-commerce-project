@@ -76,3 +76,26 @@ Admin Features
 -Built in About Us, FAQ and Contact Us page.
 
 -and much more…
+
+
+Prerequisites
+-------------
+-Composer(Dependency Manager for PHP Latest Version- v1.6.4).
+
+Installing
+--------
+Built With
+----------
+-HTML5,CSS3,BOOTSTRAP3,JAVASCRIPT,jQUERY,AJAX
+
+-PHP,MYSQL.
+
+Autor
+-----
+<a href="">Kawshar Ahmed</a>
+
+License
+-------
+Copyright 2018 Kawshar Ahmed.
+This project is totaly open source,any user this code.
+
