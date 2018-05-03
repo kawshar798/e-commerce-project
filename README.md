@@ -7,6 +7,7 @@ Description
 
 “E-COMMERCE-PROJECT” is a complete solution for Multi user Ecommerce Business Management System.
 It is all in one package for website management with backend admin panel to manage inventory, order, product, invoicing & so on.
+There are two types of admin panel for Users and Website admin. 
 This system is very easy to maintain. 
 
 User Features
