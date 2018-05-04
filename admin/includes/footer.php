@@ -47,6 +47,22 @@
 <!-- bootstrap-daterangepicker -->
 <script src="../assets/admin/vendors/moment/min/moment.min.js"></script>
 <script src="../assets/admin/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+<!-- summernote -->
+<!--<script src="../assets/admin/vendors/summernote/summernote-bs4.min.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js"></script>
+<script>
+
+    $(document).ready(function() {
+        $('.summernote').summernote({
+            height: 150,                 // set editor height
+            minHeight: null,             // set minimum height of editor
+            maxHeight: null,             // set maximum height of editor
+            focus: true                  // set focus to editable area after initializing summernote
+        });
+    });
+
+
+</script>
 
 <!-- Custom Theme Scripts -->
 <script src="../assets/admin/js/custom.min.js"></script>

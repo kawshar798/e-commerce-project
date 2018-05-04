@@ -26,6 +26,16 @@
                         include "pages/add_child_category_content.php";
                     }else if($pages=="manage_child_category"){
                         include "pages/manage_child_category_content.php";
+                    }else if($pages=="add_brand"){
+                        include "pages/add_brand_content.php";
+                    }else if($pages=="manage_brand"){
+                        include "pages/manage_brand_content.php";
+                    }else if($pages=="edit_brand"){
+                        include "pages/edit_brand_content.php";
+                    }else if($pages=="add_product"){
+                        include "pages/add_product_content.php";
+                    }else if($pages=="manage_product"){
+                        include "pages/manage_product_content.php";
                     }
 
                 }else{

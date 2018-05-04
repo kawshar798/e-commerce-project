@@ -42,7 +42,9 @@ if(isset($_GET['logout'])){
     <link href=" ../assets/admin/vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
     <link href=" ../assets/admin/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-
+    <!-- summernote -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
+    <!--<link href="../assets/admin/vendors/summernote/summernote-bs4.css" rel="stylesheet">-->
     <!-- bootstrap-progressbar -->
     <link href=" ../assets/admin/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
     <!-- JQVMap -->

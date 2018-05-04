@@ -37,6 +37,20 @@
                             <li><a href="manage_child_category.php">Manage Child Category</a></li>
                         </ul>
                     </li>
+                    <li><a><i class="fa fa-edit"></i>Brand<span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="add_brand.php">Add Brand</a></li>
+                            <li><a href="manage_brand.php">Manage Brand</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a><i class="fa fa-edit"></i>Product<span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="add_product.php">Add Product</a></li>
+                            <li><a href="manage_product.php">Manage Product</a></li>
+
+                        </ul>
+                    </li>
                 </ul>
             </div>
            

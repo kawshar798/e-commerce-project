@@ -65,6 +65,8 @@ if(isset($_POST['update_btn'])){
         </div>
     </div>
 </div>
+
+
 <script>
     document.forms['edits_frm'].elements['publication_status'].value=<?php echo $cat_info['publication_status'];?>
 
