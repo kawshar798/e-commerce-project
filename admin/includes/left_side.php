@@ -51,6 +51,13 @@
 
                         </ul>
                     </li>
+                    <li><a><i class="fa fa-edit"></i>Background Image<span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="add_bg_image.php">Add Product</a></li>
+                            <li><a href="manage_bg_image.php">Manage Product</a></li>
+
+                        </ul>
+                    </li>
                 </ul>
             </div>
            

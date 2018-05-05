@@ -305,4 +305,20 @@ class Category
     }
 
 
+
+    public function selectAllPublishedCategory(){
+        $sql = "SELECT *  FROM tbl_category WHERE publication_status=1";
+        $run_query = mysqli_query(Database::dbConnection(),$sql);
+
+        if($run_query){
+
+            return $run_query;
+        }else{
+            die("Query problme".mysqli_error(Database::dbConnection()));
+        }
+    }
+
+
+
+
 }

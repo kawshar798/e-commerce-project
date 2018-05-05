@@ -1,63 +1,48 @@
+<?php
+
+
+include "vendor/autoload.php";
+use App\classes\Category;
+
+$category = new Category();
+
+$query_reuslt = $category->selectAllPublishedCategory();
+
+
+?>
+
 <section>
     <div class="home-category color-scheme-2">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <article class="home-category-block">
-                        <div class="home-category-title">
-                            <i class="fa fa-male"></i> <a href="">Man</a>
-                        </div>
-                        <div class="home-category-option">
-                            <ul class="list-unstyled home-category-list">
-                                <li><a href=""><i class="fa fa-check"></i>Jeans & Trousers</a></li>
-                                <li><a href=""><i class="fa fa-check"></i>Blouses & Shirts</a></li>
-                                <li><a href=""><i class="fa fa-check"></i>Jacekts & Coats</a></li>
-                                <li><a href=""><i class="fa fa-check"></i>Tops & T-Shirts</a></li>
-                                <li><a href=""><i class="fa fa-check"></i>Short dresses</a></li>
-                                <li><a href=""><i class="fa fa-check"></i>Sandals</a></li>
-                            </ul>
-                            <img src="http://placehold.it/800x800" class="img-responsive" alt="">
-                        </div>
-                    </article>
+                <?php
 
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <article class="home-category-block">
-                        <div class="home-category-title">
-                            <i class="fa fa-female"></i> <a href="">Woman</a>
-                        </div>
-                        <div class="home-category-option">
-                            <ul class="list-unstyled home-category-list">
-                                <li><a href=""><i class="fa fa-check"></i>Hair Accessories</a></li>
-                                <li><a href=""><i class="fa fa-check"></i>Bags and Wallets</a></li>
-                                <li><a href=""><i class="fa fa-check"></i>Beauty and Health</a></li>
-                                <li><a href=""><i class="fa fa-check"></i>Jeans & Trousers</a></li>
-                                <li><a href=""><i class="fa fa-check"></i>Short dresses</a></li>
-                                <li><a href=""><i class="fa fa-check"></i>Slippers and Clogs</a></li>
-                            </ul>
-                            <img src="http://placehold.it/800x800" class="img-responsive" alt="">
+                while($cat_item = mysqli_fetch_assoc($query_reuslt)){?>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <article class="home-category-block">
+                            <div class="home-category-title">
+                                <i class="fa fa-male"></i> <a href=""><?php echo $cat_item['category_title'];?></a>
+                            </div>
+                            <div class="home-category-option">
+                                <ul class="list-unstyled home-category-list">
+                                    <li><a href=""><i class="fa fa-check"></i>Jeans & Trousers</a></li>
+                                    <li><a href=""><i class="fa fa-check"></i>Blouses & Shirts</a></li>
+                                    <li><a href=""><i class="fa fa-check"></i>Jacekts & Coats</a></li>
+                                    <li><a href=""><i class="fa fa-check"></i>Tops & T-Shirts</a></li>
+                                    <li><a href=""><i class="fa fa-check"></i>Short dresses</a></li>
+                                    <li><a href=""><i class="fa fa-check"></i>Sandals</a></li>
+                                </ul>
+                                <img src="http://placehold.it/800x800" class="img-responsive" alt="">
+                            </div>
+                        </article>
 
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <article class="home-category-block">
-                        <div class="home-category-title">
-                            <i class="fa fa-child"></i> <a href="">Child</a>
-                        </div>
-                        <div class="home-category-option">
-                            <ul class="list-unstyled home-category-list">
-                                <li><a href=""><i class="fa fa-check"></i>Jeans</a></li>
-                                <li><a href=""><i class="fa fa-check"></i>Shirts</a></li>
-                                <li><a href=""><i class="fa fa-check"></i>Coats</a></li>
-                                <li><a href=""><i class="fa fa-check"></i>T-Shirts</a></li>
-                                <li><a href=""><i class="fa fa-check"></i>Trousers</a></li>
-                                <li><a href=""><i class="fa fa-check"></i>Sandals</a></li>
-                            </ul>
-                            <img src="http://placehold.it/800x800" class="img-responsive" alt="">
-                        </div>
-                    </article>
-                </div>
+                    </div>
+
+               <?php }
+
+                ?>
+
+
             </div>
         </div>
     </div>

@@ -36,6 +36,8 @@
                         include "pages/add_product_content.php";
                     }else if($pages=="manage_product"){
                         include "pages/manage_product_content.php";
+                    }else if($pages=="add_backourd_image"){
+                        include "pages/add_bg_image_content.php";
                     }
 
                 }else{
