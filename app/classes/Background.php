@@ -52,7 +52,31 @@ public function  addBackground($data){
         die("Query Problem".mysqli_error(Database::dbConnection()));
     }
 
-
 }
+
+        public function showAllBackgroundImage(){
+            $sql = "SELECT * FROM tbl_background";
+            $run_query = mysqli_query(Database::dbConnection(),$sql);
+            if($run_query){
+                return $run_query;
+
+            }else{
+                die("Query Problem".mysqli_error(Database::dbConnection()));
+            }
+        }
+
+        public function bgImageShowByCat(){
+            $sql = "SELECT * FROM tbl_background WHERE bg_location_name='category'";
+            $run_query = mysqli_query(Database::dbConnection(),$sql);
+            if($run_query){
+                $background_info = mysqli_fetch_assoc($run_query);
+                return $background_info;
+
+            }else{
+                die("Query Problem".mysqli_error(Database::dbConnection()));
+            }
+
+        }
+
 
 }

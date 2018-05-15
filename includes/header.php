@@ -4,7 +4,29 @@
  * User: unknow
  * Date: 5/4/18
  * Time: 5:12 PM
- */?>
+ */
+ob_start();
+session_start();
+
+include "vendor/autoload.php";
+use App\classes\Category;
+use App\classes\Brand;
+use App\classes\Background;
+use App\classes\Product;
+use App\classes\Cart;
+use App\classes\Customer;
+use \App\classes\Order;
+
+
+$category   = new Category();
+$brand   = new Brand();
+$background = new Background();
+$product    = new Product();
+$customer    = new Customer();
+$cart = new Cart();
+$payment = new  Order();
+
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -23,6 +45,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="assets/front-end/css/theme-style.css">
     <link rel="stylesheet" href="assets/front-end/css/ie.style.css">
+    <link rel="stylesheet" href="assets/front-end/css/custom.css">
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>

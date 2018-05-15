@@ -30,12 +30,36 @@
 
                     <!-- header-account menu -->
                     <div id="account-menu" class="pull-right">
-                        <a href="" class="account-menu-title"><i class="fa fa-user"></i>&nbsp; Account <i class="fa fa-angle-down"></i> </a>
-                        <ul class="list-unstyled account-menu-item">
-                            <li><a href=""><i class="fa fa-heart"></i>&nbsp; Wishlist</a></li>
-                            <li><a href=""><i class="fa fa-check"></i>&nbsp; Checkout</a></li>
-                            <li><a href=""><i class="fa fa-shopping-cart"></i>&nbsp; Cart</a></li>
-                        </ul>
+
+                        <?php
+                        $customer_id = isset($_SESSION['customer_id']);
+                        if($customer_id){?>
+
+
+
+                        <a href="" class="account-menu-title"><i class="fa fa-user"></i>
+                            &nbsp; Account <i class="fa fa-angle-down"></i> </a>
+                            <ul class="list-unstyled account-menu-item">
+                                <li><a href=""><i class="fa fa-heart"></i>&nbsp; Wishlist</a></li>
+                                <li><a href=""><i class="fa fa-check"></i>&nbsp; Checkout</a></li>
+                                <li><a href="">
+                                        <?php
+
+                                        $checkCart = $cart->checkCartTable();
+                                        if($checkCart){?>
+                                        <i class="fa fa-shopping-cart"></i>&nbsp; Cart</a></li>
+
+                                       <?php }
+
+                                        ?>
+
+
+                                <li><a href=""><i class="fa fa-user"></i>&nbsp; Profile</a></li>
+                            </ul>
+                       <?php }
+
+                        ?>
+
                     </div>
                     <!-- /header-account menu -->
 

@@ -49,6 +49,17 @@ class Brand
                 }
 
     }
+
+
+public function showAllPublishedBrand(){
+    $sql = "SELECT * FROM tbl_brand WHERE publication_status = 1 ORDER BY   brand_id DESC";
+    $query_result= mysqli_query(Database::dbConnection(),$sql);
+    if($query_result){
+        return $query_result;
+    }else{
+        die("Query Problem".mysqli_error(Database::dbConnection()));
+    }
+}
     /*==============================
          published   Brand  By Id
     ================================*/

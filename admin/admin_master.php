@@ -38,6 +38,16 @@
                         include "pages/manage_product_content.php";
                     }else if($pages=="add_backourd_image"){
                         include "pages/add_bg_image_content.php";
+                    }else if($pages=="manage_background_image"){
+                        include "pages/manage_bg_image_content.php";
+                    }else if($pages=="add_slider"){
+                        include "pages/add_slider_content.php";
+                    }else if($pages=="manage_slider"){
+                        include "pages/manage_slider_content.php";
+                    }else if($pages=="order"){
+                        include "pages/manage_order_content.php";
+                    }else if($pages=="view_order"){
+                        include "pages/view_order_content.php";
                     }
 
                 }else{

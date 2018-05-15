@@ -106,6 +106,21 @@ class Category
         }
     }
 
+    /*================================
+          Show all Published Category
+    ==================================*/
+    public function selectAllPublishedCategory(){
+        $sql = "SELECT *  FROM tbl_category WHERE publication_status=1";
+        $run_query = mysqli_query(Database::dbConnection(),$sql);
+
+        if($run_query){
+
+            return $run_query;
+        }else{
+            die("Query problme".mysqli_error(Database::dbConnection()));
+        }
+    }
+
     /*******************************
         *
         * SUB CATEGORY
@@ -151,6 +166,23 @@ class Category
             die("Query Problem".mysqli_error(Database::dbConnection()));
         }
     }
+
+    /*===================================
+         Show all Published Sub Category
+   ======================================*/
+    public function selectAllPublishedSubCategory($cat_id){
+        $sql = "SELECT *  FROM tbl_subCategory WHERE publication_status=1 AND category_id='$cat_id'";
+        $run_query = mysqli_query(Database::dbConnection(),$sql);
+
+        if($run_query){
+
+            return $run_query;
+        }else{
+            die("Query problme".mysqli_error(Database::dbConnection()));
+        }
+    }
+
+
 
     /*===================================
           Unpublished  Sub Category
@@ -255,6 +287,22 @@ class Category
 
 
     }
+
+    /*===================================
+     Show all Published Sub Category
+======================================*/
+    public function selectAllPublishedChildCategory($sub_cat_id){
+        $sql = "SELECT *  FROM tbl_child_category WHERE sb_cat_id='$sub_cat_id'";
+        $run_query = mysqli_query(Database::dbConnection(),$sql);
+
+        if($run_query){
+
+            return $run_query;
+        }else{
+            die("Query problme".mysqli_error(Database::dbConnection()));
+        }
+
+    }
     /*===================================
            Unpublished  Child Category
       ====================================*/
@@ -306,17 +354,7 @@ class Category
 
 
 
-    public function selectAllPublishedCategory(){
-        $sql = "SELECT *  FROM tbl_category WHERE publication_status=1";
-        $run_query = mysqli_query(Database::dbConnection(),$sql);
 
-        if($run_query){
-
-            return $run_query;
-        }else{
-            die("Query problme".mysqli_error(Database::dbConnection()));
-        }
-    }
 
 
 

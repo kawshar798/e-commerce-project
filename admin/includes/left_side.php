@@ -58,6 +58,14 @@
 
                         </ul>
                     </li>
+                    <li><a><i class="fa fa-edit"></i>Slider Image<span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="add_slider.php">Add Product</a></li>
+                            <li><a href="manage_slider.php">Manage Product</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a href="order.php"><i class="fa fa-home"></i>Manage Order</a>
                 </ul>
             </div>
            

@@ -4,7 +4,13 @@
  * User: unknow
  * Date: 5/4/18
  * Time: 5:09 PM
- */?>
+ */
+if(isset($_GET['logout'])){
+
+    $customer->customerLogout();
+}
+
+?>
 <div class="header-main-block1">
                 <div class="container">
                     <div id="container-fixed">
@@ -23,8 +29,29 @@
                             <div class="col-md-4">
                                 <div class="header-mini-cart  pull-right">
                                     <a href="#"  data-toggle="dropdown">
-    Shopping cart
-<span>0 item(s)-0.00</span>
+                                Shopping cart
+
+
+                            <span><?php
+                                $get_cat = $cart->checkCartTable();
+                                if(isset($get_cat)){
+
+                                   echo  $_SESSION['product_quantity'];
+                                     ?>
+                                    item(s)-<?php
+
+                                   echo $_SESSION['grand_total'];
+
+                                    ?>
+                               <?php }else{
+
+                                    echo "empty";
+                                }
+
+
+
+
+                            ?></span>
                                     </a>
                                     <div class="dropdown-menu shopping-cart-content pull-right">
                                         <div class="shopping-cart-items">
@@ -84,9 +111,23 @@
                                     </div>
                                 </div><!-- /header-mini-cart -->
                                 <div class="top-icons">
-                                    <div class="top-icon"><a href="" title="Wishlist"><i class="fa fa-heart"></i></a></div>
-                                    <div class="top-icon"><a href="" title="Notification"><i class="fa fa-bell"></i></a><span>12</span></div>
-                                    <div class="top-icon"><a href="" title="Login"><i class="fa fa-lock"></i></a></div>
+
+                                    <?php
+                                    $customer_id = isset($_SESSION['customer_id']);
+                                    if( $customer_id==null){?>
+                                        <div class="top-icon"> <a href="login.php" title="Login"><i class="fa fa-lock"></i></a></div>
+
+
+                                    <?php   }else{?>
+                                        <div class="top-icon"><a href="" title="Wishlist"><i class="fa fa-heart"></i></a></div>
+                                        <div class="top-icon"><a href="" title="Notification"><i class="fa fa-bell"></i></a><span>12</span></div>
+                                        <div class="top-icon"> <a href="?logout=true" title="Logout"><i class="fa fa-lock"></i></a></div>
+
+                                   <?php }
+
+
+                                    ?>
+
                                 </div>
                             </div>
                         </div>

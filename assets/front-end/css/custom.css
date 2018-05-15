@@ -1,0 +1,41 @@
+.slider_title {
+    font-size: 50px;
+    text-transform: uppercase;
+    text-align: left;
+    margin-top: 0;
+    color: #FE0037;
+    font-weight: 600;
+    background: rgba(0,0,0,.6);
+    padding: 30px;
+    /* border: 10px double red; */
+}
+.image_size{
+    max-height: 300px;
+    width: 263px;
+}
+
+img#img_01 {
+    /* height: 37px; */
+    width: 50px;
+}
+img#img_02 {
+    /* height: 37px; */
+    width: 50px;
+}
+img#img_03 {
+    /* height: 37px; */
+    width: 50px;
+}
+
+h3 span {
+    color: red;
+}
+
+span.text_align_center {
+    text-align:  center;
+    color:  red;
+    text-transform:  uppercase;
+    font-weight: 600;
+    font-size: 42px;
+}
+

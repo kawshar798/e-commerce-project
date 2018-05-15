@@ -80,4 +80,123 @@ class Product
         }
     }
 
+
+    public function show_all_published_product(){
+        $sql       = "SELECT * FROM tbl_product WHERE publication_status=1 ORDER BY product_id DESC";
+        $run_query = mysqli_query(Database::dbConnection(),$sql);
+        if($run_query){
+            return $run_query;
+        }else{
+            die("Query Problem".mysqli_errno(Database::dbConnection()).__LINE__);
+        }
+    }
+    public function  show_latest_product(){
+        $sql       = "SELECT * FROM tbl_product  WHERE publication_status=1 ORDER BY product_id DESC LIMIT 7";
+        $run_query = mysqli_query(Database::dbConnection(),$sql);
+        if($run_query){
+
+
+            return $run_query;
+        }else{
+            die("Query Problem".mysqli_errno(Database::dbConnection()).__LINE__);
+        }
+
+
+    }
+
+
+    public function  show_product_by_id($product_id){
+
+        $sql = "SELECT tbl_product.*, tbl_category.category_title,tbl_brand.brand_name
+                FROM tbl_product
+                INNER JOIN tbl_category
+                ON tbl_product.category_id=tbl_category.category_id
+                INNER JOIN tbl_brand
+                ON tbl_product.brand_id=tbl_brand.brand_id AND product_id='$product_id'";
+
+
+
+
+
+        $run_query = mysqli_query(Database::dbConnection(),$sql);
+        if($run_query){
+
+            $result = mysqli_fetch_assoc($run_query);
+            return $result;
+        }else{
+            die("Query Problem".mysqli_errno(Database::dbConnection()).__LINE__);
+        }
+
+
+    }
+
+    public function showAllPublishedProductBycat($product_id){
+        $sql = "SELECT * FROM tbl_product WHERE  category_id='$product_id'";
+        $run_query = mysqli_query(Database::dbConnection(),$sql);
+        if($run_query){
+                return $run_query;
+
+        }else{
+            die("Query Problem".mysqli_errno(Database::dbConnection()).__LINE__);
+        }
+
+    }
+
+    public function  showAllPublishedProductByBrand_id($brand_id){
+        $sql = "SELECT * FROM tbl_product WHERE  brand_id='$brand_id'";
+        $run_query = mysqli_query(Database::dbConnection(),$sql);
+        if($run_query){
+            return $run_query;
+
+        }else{
+            die("Query Problem".mysqli_errno(Database::dbConnection()).__LINE__);
+        }
+
+    }
+    //Show Men product in home page
+    public function  selectProductByMen(){
+
+        $sql = "SELECT * FROM tbl_product WHERE  category_id=2";
+        $run_query = mysqli_query(Database::dbConnection(),$sql);
+        if($run_query){
+            return $run_query;
+
+        }else{
+            die("Query Problem".mysqli_errno(Database::dbConnection()).__LINE__);
+        }
+
+
+    }
+
+    public function  selectProductBywoMen(){
+
+        $sql = "SELECT * FROM tbl_product WHERE  category_id=3";
+        $run_query = mysqli_query(Database::dbConnection(),$sql);
+        if($run_query){
+            return $run_query;
+
+        }else{
+            die("Query Problem".mysqli_errno(Database::dbConnection()).__LINE__);
+        }
+
+
+    }
+    public function  showAllPublishedProductByChildCat($child_cat_id){
+
+        $sql = "SELECT * FROM tbl_product WHERE  child_cat_id='$child_cat_id'";
+        $run_query = mysqli_query(Database::dbConnection(),$sql);
+        if($run_query){
+            return $run_query;
+
+        }else{
+            die("Query Problem".mysqli_errno(Database::dbConnection()).__LINE__);
+        }
+
+
+    }
+
+
+
+
+
 }
